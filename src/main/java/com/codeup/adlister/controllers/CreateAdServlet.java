@@ -24,10 +24,17 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        String category = request.getParameter("category");
+        int calories = Integer.parseInt(request.getParameter("calories"));
         Ad ad = new Ad(
+            1,
             user.getId(),
-            request.getParameter("title"),
-            request.getParameter("description")
+            title,
+            description,
+            category,
+            calories
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
