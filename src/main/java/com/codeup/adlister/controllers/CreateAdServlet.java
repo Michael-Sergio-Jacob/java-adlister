@@ -24,12 +24,13 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
+        long id = Long.parseLong(request.getParameter("id"));
         String title = request.getParameter("title");
         String description = request.getParameter("description");
         String category = request.getParameter("category");
         int calories = Integer.parseInt(request.getParameter("calories"));
         Ad ad = new Ad(
-            1,
+            id,
             user.getId(),
             title,
             description,
