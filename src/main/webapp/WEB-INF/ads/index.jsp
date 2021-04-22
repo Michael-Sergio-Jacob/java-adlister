@@ -17,13 +17,14 @@
         <div class="col-md-6">
             <h3>Ad: ${ad.title}</h3>
             <h4>Posted by: ${usersDao.findById(ad.userId).getUsername()}</h4>
+            <h4>Contact number: ${usersDao.findById(ad.userId).getPhoneNumber()}</h4>
             <p>Description: ${ad.description}</p>
         </div>
     </c:forEach>
 </div>
 <div class="container">
     <br>
-    <a href="../profile"><button class="btn btn-primary btn-block">Back to my profile.</button></a>
+    <a href="../profile"><button class="btn btn-primary btn-block">Back to my profile</button></a>
 </div>
 </body>
 </html>
