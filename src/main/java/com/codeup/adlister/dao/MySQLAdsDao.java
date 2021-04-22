@@ -84,4 +84,18 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public Ad findById(long id) {
+        String query = String.format("SELECT * FROM ads WHERE id = %d", id);
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                return extractAd(rs);
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
 }

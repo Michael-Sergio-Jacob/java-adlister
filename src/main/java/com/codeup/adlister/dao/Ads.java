@@ -12,4 +12,7 @@ public interface Ads {
 
     // find ad by title
     List<Ad> findByTitle(String searched_ad);
+
+    // find ad by id
+    Ad findById(long id);
 }
