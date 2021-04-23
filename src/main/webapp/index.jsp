@@ -10,6 +10,7 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome to the Food-lister!</h1>
+        <img src="img/download.jpeg" alt="">
     </div>
 </body>
 </html>

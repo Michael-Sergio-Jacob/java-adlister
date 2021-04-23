@@ -1,8 +1,6 @@
 package com.codeup.adlister.controllers;
-
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +17,6 @@ public class SearchAdServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/WEB-INF/search_ads.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String searched_ad = request.getParameter("searched_ads");
         if (searched_ad == null) {
