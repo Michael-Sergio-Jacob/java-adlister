@@ -1,11 +1,9 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +37,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insert(Ad ad) {
+    public long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
@@ -53,6 +51,41 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    @Override
+    public List<Ad> findByTitle(String searched_ad) {
+        return null;
+    }
+
+    @Override
+    public Ad findById(long id) {
+        return null;
+    }
+
+    @Override
+    public void editAd(String title, String description, Long newId) {
+
+    }
+
+    @Override
+    public List<Ad> allForUser(User user) {
+        return null;
+    }
+
+    @Override
+    public Ad getAdById(long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteAd(Ad ad) {
+
+    }
+
+    @Override
+    public Long delete(Long adId) {
+        return null;
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
