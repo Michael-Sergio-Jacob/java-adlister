@@ -18,6 +18,6 @@ public interface Ads {
     // find ad by id
     Ad findById(long id);
 
-    public List<Ad> allForUser(User user);
+    List<Ad> allForUser(User user);
 
 }
