@@ -16,3 +16,4 @@ public interface Ads {
     // find ad by id
     Ad findById(long id);
 }
+
