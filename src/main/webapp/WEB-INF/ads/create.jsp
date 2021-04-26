@@ -11,12 +11,24 @@
     <h1>Create a new Ad</h1>
     <form action="/ads/create" method="post">
         <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <label for="dish_name">Name</label>
+            <input id="dish_name" name="dish_name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <input id="ingredients" name="ingredients" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="diet_type">Diet</label>
+            <input id="diet_type" name="ingredients" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="caloric_content">Calories</label>
+            <input id="caloric_content" name="caloric_content" class="form-control" type="number">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            <input id="description" name="description" class="form-control" type="text">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
