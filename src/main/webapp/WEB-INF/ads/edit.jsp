@@ -30,6 +30,10 @@
             <label for="description">Description</label>
             <input id="description" name="description" class="form-control" type="text">
         </div>
+        <div class="form-group d-none">
+            <label for="id">id</label>
+            <input id="id" name="id" value="${ad.id}" class="form-control" type="text">
+        </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>

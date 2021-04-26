@@ -36,12 +36,12 @@ public class EditServlet extends HttpServlet {
         String newDiet = request.getParameter("diet_type");
         int newCalorie = Integer.parseInt(request.getParameter("caloric_content"));
         String newDescription = request.getParameter("description");
-        Long adId = Long.parseLong(request.getParameter("ad-id"));
+        Long id = Long.parseLong(request.getParameter("id"));
 
         User user = (User) request.getSession().getAttribute("user");
         Ad ad = (Ad) request.getSession().getAttribute("ad");
 
-        DaoFactory.getAdsDao().editAd(newDish, newIngredients, newDiet, newCalorie, newDescription, adId);
+        DaoFactory.getAdsDao().editAd(newDish, newIngredients, newDiet, newCalorie, newDescription, id);
         response.sendRedirect("/profile");
     }
 }

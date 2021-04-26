@@ -51,11 +51,11 @@ public class MySQLAdsDao implements Ads {
     public void deleteAd(Ad ad) {
         PreparedStatement stmt;
     }
-    public long delete(Long adId) {
+    public long delete(Long id) {
         try {
             String deleteQuery = "DELETE FROM dishes WHERE id = ?";
             PreparedStatement ps = connection.prepareStatement(deleteQuery);
-            ps.setLong(1, adId);
+            ps.setLong(1, id);
             ps.executeUpdate();
             return 2L;
         } catch (SQLException e) {
@@ -136,8 +136,10 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
     //Edit 1 Ad
-    public void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String newDescription, Long newId){
+    public void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String newDescription, Long id){
         String editQuery = "UPDATE dishes SET dish_name = ?, ingredients = ?, diet_type = ?, caloric_content = ?, description = ? WHERE id = ?";
         PreparedStatement ps = null;
         try {
@@ -147,7 +149,7 @@ public class MySQLAdsDao implements Ads {
             ps.setString(3, newDiet);
             ps.setInt(4, newCalorie);
             ps.setString(5, newDescription);
-            ps.setLong(6, newId);
+            ps.setLong(6, id);
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -12,5 +12,10 @@ public interface Users {
     long insert(User user);
 
     public void destroy(long userId);
+    public void updateEmail(String newEmail, String userId);
+    public void updatePassword(String newPassword, String userId);
+    public void updateUsername(String newUsername, String userId);
 
-}
+
+    }
+

@@ -13,6 +13,7 @@ CREATE TABLE dishes (
                             ON DELETE CASCADE
 );
 
+# hard-coded dish listings for testing
 # INSERT INTO dishes (user_id, dish_Name, ingredients, diet_type, caloric_content, description)
 # VALUES
 # (1, 'Paprika Chicken', 'Chicken breast, Paprika, Poultry Seasoning, Salt, Pepper, Lemon Juice', 'Paleo', 318, 'Carbs 7g, Fat 12g, Protein 46g'),
