@@ -17,7 +17,7 @@ import java.io.IOException;
 @WebServlet(name = "EditAdServlet", urlPatterns = "/editAd")
 public class EditAdServlet extends HttpServlet {
     Ad ad;
-    long adId;
+    Long id;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }

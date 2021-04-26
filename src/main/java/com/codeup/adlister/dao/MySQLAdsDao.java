@@ -136,8 +136,10 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
     //Edit 1 Ad
-    public void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String newDescription, long id){
+    public void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String newDescription, Long id){
         String editQuery = "UPDATE dishes SET dish_name = ?, ingredients = ?, diet_type = ?, caloric_content = ?, description = ? WHERE id = ?";
         PreparedStatement ps = null;
         try {

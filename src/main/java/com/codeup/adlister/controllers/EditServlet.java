@@ -36,6 +36,9 @@ public class EditServlet extends HttpServlet {
         String newDiet = request.getParameter("diet_type");
         int newCalorie = Integer.parseInt(request.getParameter("caloric_content"));
         String newDescription = request.getParameter("description");
+
+
+
         Long id = Long.parseLong(request.getParameter("id"));
 
         User user = (User) request.getSession().getAttribute("user");

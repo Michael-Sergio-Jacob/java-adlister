@@ -19,7 +19,7 @@ public interface Ads {
     Ad findById(long id);
 
     // edit ad
-    void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String description, long id);
+    void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String description, Long id);
     List<Ad> allForUser(User user);
 
     // delete ad servlet
