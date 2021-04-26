@@ -1,7 +1,7 @@
 USE adlister_db;
 DROP TABLE IF EXISTS dishes;
 CREATE TABLE dishes (
-                        `id` INT unsigned NOT NULL AUTO_INCREMENT,
+                        `id` INT unsigned AUTO_INCREMENT,
                         `user_id` INT unsigned NOT NULL,
                         `dish_name` VARCHAR(250) NOT NULL,
                         `ingredients` VARCHAR(250) NOT NULL,
