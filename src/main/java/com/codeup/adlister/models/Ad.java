@@ -9,8 +9,19 @@ public class Ad {
     private int caloric_content;
     private String description;
 
+    // select ad constructor
     public Ad(long id, long userId, String dish_name, String ingredients, String diet_type, int caloric_content, String description) {
         this.id = id;
+        this.userId = userId;
+        this.dish_name = dish_name;
+        this.ingredients = ingredients;
+        this.diet_type = diet_type;
+        this.caloric_content = caloric_content;
+        this.description = description;
+    }
+
+    // insert ad constructor
+    public Ad(long userId, String dish_name, String ingredients, String diet_type, int caloric_content, String description) {
         this.userId = userId;
         this.dish_name = dish_name;
         this.ingredients = ingredients;
