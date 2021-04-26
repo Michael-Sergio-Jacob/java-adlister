@@ -74,7 +74,10 @@ public class MySQLAdsDao implements Ads {
                 ad = new Ad(
                         rs.getLong("id"),
                         rs.getLong("user_id"),
-                        rs.getString("title"),
+                        rs.getString("dish_name"),
+                        rs.getString("ingredients"),
+                        rs.getString("diet_type"),
+                        rs.getInt("caloric_content"),
                         rs.getString("description")
                 );
             }
@@ -91,7 +94,7 @@ public class MySQLAdsDao implements Ads {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
+            stmt.setString(2, ad.getDish_name());
             stmt.setString(3, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -150,7 +153,10 @@ public class MySQLAdsDao implements Ads {
         return new Ad(
                 rs.getLong("id"),
                 rs.getLong("user_id"),
-                rs.getString("title"),
+                rs.getString("dish_name"),
+                rs.getString("ingredients"),
+                rs.getString("diet_type"),
+                rs.getInt("caloric_content"),
                 rs.getString("description")
         );
     }
