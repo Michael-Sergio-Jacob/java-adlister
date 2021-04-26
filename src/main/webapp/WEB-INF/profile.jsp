@@ -25,7 +25,10 @@
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <form>
-                <h2>${ad.title}</h2>
+                <h2>${ad.dish_name}</h2>
+                <h4>${ad.ingredients}</h4>
+                <h4>${ad.diet_type}</h4>
+                <h4>${ad.caloric_content}</h4>
                 <p>${ad.description}</p>
 
                 <a href="<c:url value="ads/edit" >
