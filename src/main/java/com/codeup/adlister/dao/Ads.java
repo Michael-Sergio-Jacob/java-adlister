@@ -19,7 +19,7 @@ public interface Ads {
     Ad findById(long id);
 
     // edit ad
-    void editAd(String title, String description, Long newId);
+    void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String description, Long newId);
 
     List<Ad> allForUser(User user);
 
