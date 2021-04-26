@@ -6,5 +6,11 @@ import java.util.List;
 
 public interface Users {
     User findByUsername(String username);
-    Long insert(User user);
+    User findByEmail(String email);
+    User findById(long id);
+
+    long insert(User user);
+
+    public void destroy(long userId);
+
 }

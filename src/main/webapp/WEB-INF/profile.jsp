@@ -34,8 +34,6 @@
                 <a href="<c:url value="ads/delete" >
     <c:param name="id" value="${ad.id}"/>
     </c:url>">Delete</a>
-
-
             </form>
         </div>
     </c:forEach>
