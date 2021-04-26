@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-
-
 @WebServlet(name = "EditAdServlet", urlPatterns = "/editAd")
 public class EditAdServlet extends HttpServlet {
     Ad ad;
