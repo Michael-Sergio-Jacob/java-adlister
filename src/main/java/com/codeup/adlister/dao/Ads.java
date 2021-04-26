@@ -27,6 +27,5 @@ public interface Ads {
     Ad getAdById(long id);
     void deleteAd(Ad ad);
     long delete(Long adId);
-
-
+    
 }
