@@ -25,7 +25,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM dishes");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -38,7 +38,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> allForUser(User user) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+            stmt = connection.prepareStatement("SELECT * FROM dishes WHERE user_id = ?");
             stmt.setLong(1, user.getId());
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
@@ -51,11 +51,11 @@ public class MySQLAdsDao implements Ads {
     public void deleteAd(Ad ad) {
         PreparedStatement stmt;
     }
-    public long delete(Long adId) {
+    public long delete(Long id) {
         try {
-            String deleteQuery = "DELETE FROM ads WHERE id = ?";
+            String deleteQuery = "DELETE FROM dishes WHERE id = ?";
             PreparedStatement ps = connection.prepareStatement(deleteQuery);
-            ps.setLong(1, adId);
+            ps.setLong(1, id);
             ps.executeUpdate();
             return 2L;
         } catch (SQLException e) {
@@ -67,7 +67,7 @@ public class MySQLAdsDao implements Ads {
     public Ad getAdById(long id) {
         Ad ad = null;
         try {
-            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ADS WHERE id=?");
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM dishes WHERE id = ?");
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -91,11 +91,14 @@ public class MySQLAdsDao implements Ads {
     @Override
     public long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO dishes(user_id, dish_name, ingredients, diet_type, caloric_content, description) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getDish_name());
-            stmt.setString(3, ad.getDescription());
+            stmt.setString(3, ad.getIngredients());
+            stmt.setString(4, ad.getDiet_type());
+            stmt.setInt(5, ad.getCaloric_content());
+            stmt.setString(6, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -108,7 +111,7 @@ public class MySQLAdsDao implements Ads {
     //Find Ad by Title
     @Override
     public List<Ad> findByTitle(String searched_ad) {
-        String query = "SELECT * FROM ads WHERE title like ?";
+        String query = "SELECT * FROM dishes WHERE dish_name like ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, searched_ad);
@@ -120,7 +123,7 @@ public class MySQLAdsDao implements Ads {
 
     // Find add by Title
     public Ad findById(long id) {
-        String query = String.format("SELECT * FROM ads WHERE id = %d", id);
+        String query = String.format("SELECT * FROM dishes WHERE id = %d", id);
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -134,14 +137,17 @@ public class MySQLAdsDao implements Ads {
     }
 
     //Edit 1 Ad
-    public void editAd(String newTitle, String newDescription, Long newId){
-        String query = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
+    public void editAd(String newDish, String newIngredients, String newDiet, int newCalorie, String newDescription, long id){
+        String editQuery = "UPDATE dishes SET dish_name = ?, ingredients = ?, diet_type = ?, caloric_content = ?, description = ? WHERE id = ?";
         PreparedStatement ps = null;
         try {
-            ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, newTitle);
-            ps.setString(2, newDescription);
-            ps.setLong(3, newId);
+            ps = connection.prepareStatement(editQuery, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, newDish);
+            ps.setString(2, newIngredients);
+            ps.setString(3, newDiet);
+            ps.setInt(4, newCalorie);
+            ps.setString(5, newDescription);
+            ps.setLong(6, id);
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

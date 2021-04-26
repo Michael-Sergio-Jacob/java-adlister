@@ -52,7 +52,7 @@
     <div class="p-5 text-center bg-image" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('../img/sdw.jpg');height: 400px;">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
-                <h1 class="mb-3">Food-Lister</h1>
+                <h1 class="mb-3">Foodlister</h1>
                 <h4 class="mb-3">Below are ads for all our dishes. Feel Free to explore, add and customize your food lists to meet your nutritional needs. Click on view more to see additional details on our variety of meals.</h4>
             </div>
         </div>

@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="diet_type">Diet</label>
-            <input id="diet_type" name="ingredients" class="form-control" type="text">
+            <input id="diet_type" name="diet_type" class="form-control" type="text">
         </div>
         <div class="form-group">
             <label for="caloric_content">Calories</label>

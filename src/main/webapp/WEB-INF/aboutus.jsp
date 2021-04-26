@@ -18,10 +18,10 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="nav-item mr-auto active"><a href="/foodlister" class="nav-link font-italic"> Foodlister </a></div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="/profile" class="nav-link font-italic"> Profile </a></li>
                 <li class="nav-item active"><a href="/ads/create" class="nav-link font-italic"> Create an Ad </a></li>
-                <li class="nav-item active"><a href="/foodlister" class="nav-link font-italic"> Foodlister </a></li>
             </ul>
 </nav>
 
@@ -52,7 +52,7 @@
             <div class="col-lg-5 px-5 mx-auto"><img src="../img/computer.png" alt="" class="img-fluid mb-4 mb-lg-0"></div>
             <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
                 <h2 class="font-weight-light">Stay in the loop!</h2>
-                <p class="font-italic text-muted mb-4">Create a profile, customize and add meals, register now to stay connected with the best!</p><a href="/profile" class="btn btn-light px-5 rounded-pill shadow-sm">Register</a>
+                <p class="font-italic text-muted mb-4">Create a profile, customize and add meals, register now to stay connected with the best!</p><a href="/register" class="btn btn-light px-5 rounded-pill shadow-sm">Register</a>
             </div>
         </div>
     </div>
