@@ -39,48 +39,27 @@
 <header>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid">
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarExample01"
-                aria-controls="navbarExample01"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="/profile">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/createad">Create an Ad</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/aboutus">About Us</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="/profile" class="nav-link font-italic"> Profile </a></li>
+            <li class="nav-item active"><a href="/ads/create" class="nav-link font-italic"> Create an Ad </a></li>
+            <li class="nav-item active"><a href="/aboutus" class="nav-link font-italic"> About Us </a></li>
+        </ul>
+    </nav>
 <!-- Navbar -->
 
     <!-- Background image -->
-    <div class="p-5 text-center bg-image" style="background-image: url('./img/sdw.jpg');height: 400px;">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white">
-                    <h1 class="mb-3">Food-Lister</h1>
-                    <h4 class="mb-3">Below are ads for all our dishes. Feel Free to explore, add and customize your food lists to meet your nutritional needs. Click on view more to see additional details on our variety of meals.</h4>
-                </div>
+    <div class="p-5 text-center bg-image" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('../img/sdw.jpg');height: 400px;">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3">Food-Lister</h1>
+                <h4 class="mb-3">Below are ads for all our dishes. Feel Free to explore, add and customize your food lists to meet your nutritional needs. Click on view more to see additional details on our variety of meals.</h4>
             </div>
         </div>
     </div>
+
 </header>
+
 
 <table class="table table-hover" align="center" cellpadding="5" cellspacing="5" border="1">
     <thead>
