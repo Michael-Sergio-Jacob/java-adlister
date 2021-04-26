@@ -12,12 +12,14 @@
 <div class="container">
     <h1>Here Are all the ads!</h1>
 
-
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h3>Ad: ${ad.title}</h3>
+            <h3>Ad: ${ad.dish_name}</h3>
             <h4>Posted by: ${usersDao.findById(ad.userId).getUsername()}</h4>
             <h4>Contact number: ${usersDao.findById(ad.userId).getPhoneNumber()}</h4>
+            <h4>Ingredients: ${ad.ingredients}</h4>
+            <h4>Diet: ${ad.diet_type}</h4>
+            <h4>Calories: ${ad.caloric_content}</h4>
             <p>Description: ${ad.description}</p>
         </div>
     </c:forEach>
