@@ -28,7 +28,6 @@ public class CreateAdServlet extends HttpServlet {
 
         Ad ad = new Ad(
                 user.getId(),
-                Long.parseLong(request.getParameter("id")),
                 request.getParameter("dish_name"),
                 request.getParameter("ingredients"),
                 request.getParameter("diet_type"),
