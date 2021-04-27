@@ -41,9 +41,10 @@
 <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/profile" class="nav-link font-italic"> Profile </a></li>
-            <li class="nav-item active"><a href="/ads/create" class="nav-link font-italic"> Create an Ad </a></li>
-            <li class="nav-item active"><a href="/aboutus" class="nav-link font-italic"> About Us </a></li>
+            <li class="nav-item "><a href="/profile" class="nav-link text-light font-italic"> Profile </a></li>
+            <li class="nav-item "><a href="/ads/create" class="nav-link text-light font-italic"> Create an Ad </a></li>
+            <li class="nav-item "><a href="/search_ads" class="nav-link text-light font-italic"> Search Ads</a></li>
+            <li class="nav-item "><a href="/aboutus" class="nav-link text-light font-italic"> About Us </a></li>
         </ul>
     </nav>
 <!-- Navbar -->
@@ -63,7 +64,7 @@
 
 <table class="table table-hover" align="center" cellpadding="5" cellspacing="5" border="1">
     <thead>
-    <tr class="bg-info">
+    <tr class="bg-info text-white">
         <td>Dish Name</td>
         <td>Ingriedients</td>
         <td>Diet Type</td>
@@ -79,7 +80,7 @@
             resultSet = statement.executeQuery(sql);
             while(resultSet.next()){
     %>
-    <tr class="bg-light">
+    <tr class="bg-light text-white">
 
         <td><%=resultSet.getString("Dish_Name")%><br><button type="button" class="btn btn-warning">View More</button></td>
         <td><%=resultSet.getString("Ingredients") %></td>

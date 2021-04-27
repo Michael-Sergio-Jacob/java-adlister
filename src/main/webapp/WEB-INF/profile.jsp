@@ -5,16 +5,48 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+    <style>
+        body {
+            color: white;
+
+        }
+        #bg {
+            position: fixed;
+            z-index: -1;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        #food {
+            height: 100%;
+            width: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #center {
+            margin-top: 125px;
+
+        }
+    </style>
 </head>
 
 <body>
 
 <jsp:include page="/WEB-INF/partials/loginNavbar.jsp" />
+<div id="bg">
+<img src="../img/food.jpg" id="food" alt="food">
+</div>
 
+
+<div id="center">
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
 </div>
-
 
 <div class="container">
     <a href="ads/create"><button class="btn btn-primary btn-block">Create a new ad</button></a>
@@ -41,7 +73,7 @@
         </div>
     </c:forEach>
 </div>
-
+</div>
 </body>
 <footer>
     <div class="container">
@@ -49,5 +81,9 @@
         <br>
 
     </div>
+
+
+
+
 </footer>
 </html>

@@ -22,6 +22,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item "><a href="/profile" class="nav-link text-light font-italic"> Profile </a></li>
                 <li class="nav-item "><a href="/ads/create" class="nav-link text-light font-italic"> Create an Ad </a></li>
+                <li class="nav-item "><a href="/search_ads" class="nav-link text-light font-italic"> Search Ads</a></li>
             </ul>
 </nav>
 
