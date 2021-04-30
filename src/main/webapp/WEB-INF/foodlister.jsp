@@ -80,7 +80,7 @@
             resultSet = statement.executeQuery(sql);
             while(resultSet.next()){
     %>
-    <tr class="bg-light text-white">
+    <tr class="bg-light ">
 
         <td><%=resultSet.getString("Dish_Name")%><br><button type="button" class="btn btn-warning">View More</button></td>
         <td><%=resultSet.getString("Ingredients") %></td>

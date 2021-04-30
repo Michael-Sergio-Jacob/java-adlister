@@ -14,7 +14,7 @@
     <h1>Here Are all the ads!</h1>
     <c:forEach var="ad" items="${searched_ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
+            <h2>${ad.dish_name}</h2>
             <p>${ad.description}</p>
         </div>
     </c:forEach>
